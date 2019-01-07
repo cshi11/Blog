@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand ml-sm-2" href="#"><img src="/public/img/logo3.png" height="30" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse row" id="navbarNavAltMarkup">
+    <div class="navbar-nav col-md-8">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </div>
+    <div class="navbar-nav col-md-4">
+      {{ if user }}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <img src="/public/img/avatar-default.png" height="30" alt="">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <p class="dropdown-item">{{ user.username }}</p>
+          <a class="dropdown-item" href="#">个人中心</a>
+          <a class="dropdown-item" href="#">我的帖子</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <a href="/topics/new"><button class="btn btn-outline-primary mr-2">发帖</button></a>
+      <a href="/layout"><button class="btn btn-outline-success mr-2">退出</button></a>
+      {{ else }}
+      <a href="/register"><button class="btn btn-outline-success mr-2">注册</button></a>
+      <a href="/login"><button class="btn btn-outline-info mr-2">登陆</button></a>
+      {{ /if }}
+    </div>
+  </div>
+</nav>
+<br>

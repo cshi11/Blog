@@ -1,0 +1,33 @@
+{{extend '../_layouts/home.html'}}
+
+{{block 'title'}}{{'多人博客 - 首页'}}{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/markdown-github.css">
+<style>
+  .panel .panel-heading .action i {
+    margin-right: 10px;
+  }
+</style>
+{{/block}}
+
+{{block 'body'}}
+<section class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <article class="markdown-body">
+      <h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>{{ comment.title }}</h1>
+      <p>作者：{{comment.autor}}    创建日期：{{comment.creatDate}}</p>
+      <hr>
+      <p>{{comment.content}}</p>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputPassword1">添加回复</label>
+          <textarea class="form-control" name="" id="" cols="10" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">回复</button>
+      </form>
+    </div>
+  </div>
+</section>
+{{/block}}

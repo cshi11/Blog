@@ -1,0 +1,33 @@
+{{extend '../_layouts/home.html'}}
+
+{{block 'title'}}{{'发帖'}}{{/block}}
+
+{{block 'body'}}
+<section class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <form action="/topics/new" method="POST" name="comment">
+        <div class="form-group">
+          <label for="exampleInputEmail1">选择板块</label>
+          <select class="form-control" name="classification">
+            <option>Node</option>
+            <option>Java</option>
+            <option>C</option>
+            <option>Python</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">标题</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name='title' placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">内容</label>
+          <textarea class="form-control" name='content' rows="3"></textarea>
+        </div>
+        <input type="hidden" name='autor' value="{{ user.username }}">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+{{/block}}
