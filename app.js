@@ -25,6 +25,10 @@ app.use(session({
 
 app.use(router)
 
+app.use((err, req, res)=>{
+    res.render('404.html')
+})
+
 app.listen(3000, ()=>{
     console.log('Server starting...')
 })
